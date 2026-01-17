@@ -1,7 +1,7 @@
-// About section with bio and experience
 const About = () => {
   return (
     <section id="about" className="section bg-light fade-section">
+
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-8">
