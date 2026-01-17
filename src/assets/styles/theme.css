@@ -1,0 +1,329 @@
+:root {
+  /* ===== Default: Light Theme (CSS variables) ===== */
+  --color-primary: #0d6efd; /* Primary blue */
+  --color-secondary: #6c757d; /* Neutral gray for subtitles */
+  --color-bg: #f8f9fa; /* Main app background */
+  --color-surface: #ffffff; /* Card / surface background */
+  --color-text: #212529; /* Default text color */
+  --color-accent: #0dcaf0; /* Soft cyan accent */
+  --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+/*
+  Dark theme overrides using the data-theme attribute on <body>.
+  The React theme toggle simply sets: document.body.dataset.theme = 'dark' | 'light'.
+*/
+body[data-theme='dark'] {
+  --color-primary: #38bdf8; /* Soft blue for dark mode */
+  --color-secondary: #9ca3af;
+  --color-bg: #0f172a; /* Dark slate background */
+  --color-surface: #1e293b; /* Card background */
+  --color-text: #e5e7eb; /* Light text */
+  --color-accent: #38bdf8;
+  --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.7);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+a {
+  color: var(--color-primary);
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* ===== Layout ===== */
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.section.bg-light {
+  background-color: #f1f3f5;
+  color: var(--color-text);
+}
+
+.section.bg-light .text-secondary {
+  color: var(--color-secondary) !important;
+}
+
+/* ===== Navbar ===== */
+
+.navbar-theme {
+  background-color: var(--color-surface) !important;
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.06);
+}
+
+.navbar-theme .navbar-brand {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.navbar-theme .navbar-brand svg {
+  /* color: var(--color-accent); */
+  color: var(--color-primary);
+}
+
+.navbar-theme .nav-link {
+  color: var(--color-secondary);
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.navbar-theme .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  transition: width 0.2s ease;
+}
+
+.navbar-theme .nav-link:hover,
+.navbar-theme .nav-link:focus {
+  color: var(--color-text);
+}
+
+.navbar-theme .nav-link:hover::after,
+.navbar-theme .nav-link:focus::after {
+  width: 100%;
+}
+
+/* Theme toggle button in navbar */
+.theme-toggle-btn {
+  border-color: transparent;
+  color: var(--color-secondary);
+}
+
+.theme-toggle-btn:hover,
+.theme-toggle-btn:focus-visible {
+  color: var(--color-text);
+  background-color: rgba(148, 163, 184, 0.16);
+}
+
+/* ===== Hero Section ===== */
+
+.hero-section {
+  padding-top: 7rem;
+  padding-bottom: 4rem;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(13, 110, 253, 0.08), transparent 55%),
+    radial-gradient(circle at 90% 0%, rgba(13, 202, 240, 0.08), transparent 50%),
+    linear-gradient(180deg, #ffffff 0%, #f8f9fa 60%, #eef2f7 100%);
+}
+
+.hero-section .lead {
+  color: var(--color-secondary);
+}
+
+.glass-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  backdrop-filter: blur(16px);
+}
+
+
+.bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  display: inline-block;
+}
+
+/* ===== Cards & Icons ===== */
+
+.card-hover {
+  transition:
+    transform 0.18s ease-out,
+    box-shadow 0.18s ease-out,
+    border-color 0.18s ease-out,
+    background-color 0.18s ease-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-soft);
+  border-color: rgba(13, 110, 253, 0.12);
+  background-color: var(--color-surface);
+}
+
+.skill-card {
+  background-color: var(--color-surface);
+}
+
+.icon-wrapper {
+  width: 40px;
+  height: 40px;
+  background: #e9f2ff;
+  color: var(--color-primary);
+}
+
+.project-card {
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  background: #e9f2ff;
+  color: var(--color-primary);
+}
+
+.experience-pill {
+  min-width: 150px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+}
+
+/* ===== Buttons (reusable theme buttons) ===== */
+
+.btn-theme-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease-out;
+}
+
+.btn-theme-primary:hover,
+.btn-theme-primary:focus-visible {
+  background-color: #0b5ed7;
+  border-color: #0b5ed7;
+  box-shadow: 0 10px 24px rgba(13, 110, 253, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-theme-outline {
+  background-color: transparent;
+  border-color: rgba(33, 37, 41, 0.2);
+  color: var(--color-text);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease-out;
+}
+
+.btn-theme-outline:hover,
+.btn-theme-outline:focus-visible {
+  background-color: rgba(13, 110, 253, 0.06);
+  border-color: var(--color-primary);
+  color: var(--color-text);
+  transform: translateY(-1px);
+}
+
+/* ===== Scroll Reveal (fade-in on scroll) ===== */
+
+/*
+  Sections with the 'fade-section' class start slightly translated and transparent.
+  When 'is-visible' is added (via IntersectionObserver in React), they fade and slide in.
+*/
+.fade-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Footer ===== */
+
+.footer-theme {
+  background-color: var(--color-surface);
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  color: var(--color-secondary);
+}
+
+.footer-theme span:first-child {
+  color: var(--color-text);
+}
+
+/* ===== Global color transition for theme changes ===== */
+
+/*
+  These transitions make theme switching feel smooth by animating
+  background and text colors instead of snapping instantly.
+*/
+body,
+.navbar-theme,
+.hero-section,
+.section,
+.card,
+.footer-theme {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Dark-mode specific background tweaks */
+body[data-theme='dark'] .hero-section {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(148, 163, 184, 0.18), transparent 55%),
+    radial-gradient(circle at 90% 0%, rgba(56, 189, 248, 0.18), transparent 50%),
+    linear-gradient(180deg, #020617 0%, #020617 40%, #020617 100%);
+}
+body[data-theme='dark'] .project-card {
+  background-color: var(--color-surface);
+  /* background:
+    radial-gradient(circle at 10% 10%, rgba(148, 163, 184, 0.18), transparent 55%),
+    radial-gradient(circle at 90% 0%, rgba(56, 189, 248, 0.18), transparent 50%),
+    linear-gradient(180deg, #020617 0%, #020617 40%, #020617 100%); */
+}
+body[data-theme='dark'] .project-card h5 {
+  color: var(--color-text);
+
+}
+
+body[data-theme='dark'] .section.bg-light {
+  background-color: #020617;
+}
+
+body[data-theme='dark'] .icon-wrapper,
+body[data-theme='dark'] .contact-icon {
+  background: #0b1120;
+  color: var(--color-primary);
+}
+body[data-theme='dark'] .glass-card span{
+  color: var(--bs-light-text-emphasis) !important;
+}
+
+@media (max-width: 991.98px) {
+  .hero-section {
+    padding-top: 6rem;
+  }
+}
+
