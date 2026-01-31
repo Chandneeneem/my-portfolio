@@ -16,7 +16,7 @@ const Contact = () => {
                 <span className="contact-icon d-inline-flex align-items-center justify-content-center rounded-circle">
                   <FaEnvelope />
                 </span>
-                <div>
+                <div className="text-truncate">
                   <div className="fw-semibold">Email</div>
                   <div className="text-secondary small">chandnineem11@gmail.com</div>
                 </div>
@@ -30,7 +30,7 @@ const Contact = () => {
                 <span className="contact-icon d-inline-flex align-items-center justify-content-center rounded-circle">
                   <FaGithub />
                 </span>
-                <div>
+                <div className="text-truncate">
                   <div className="fw-semibold">GitHub</div>
                   <div className="text-secondary small">https://github.com/Chandneeneem</div>
                 </div>
@@ -44,7 +44,7 @@ const Contact = () => {
                 <span className="contact-icon d-inline-flex align-items-center justify-content-center rounded-circle">
                   <FaLinkedin />
                 </span>
-                <div>
+                <div className="text-truncate">
                   <div className="fw-semibold">LinkedIn</div>
                   <div className="text-secondary small">https://www.linkedin.com/in/chandni-neem-606591229/</div>
                 </div>
