@@ -186,12 +186,12 @@ a:hover {
   border: 1px solid rgba(15, 23, 42, 0.06);
 }
 
-.contact-icon {
+/* .contact-icon {
   width: 40px;
   height: 40px;
   background: #e9f2ff;
   color: var(--color-primary);
-}
+} */
 
 .experience-pill {
   min-width: 150px;
@@ -313,10 +313,10 @@ body[data-theme='dark'] .section.bg-light {
 }
 
 body[data-theme='dark'] .icon-wrapper,
-body[data-theme='dark'] .contact-icon {
+/* body[data-theme='dark'] .contact-icon {
   background: #0b1120;
   color: var(--color-primary);
-}
+} */
 body[data-theme='dark'] .glass-card span{
   color: var(--bs-light-text-emphasis) !important;
 }
@@ -327,3 +327,34 @@ body[data-theme='dark'] .glass-card span{
   }
 }
 
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  background: #e9f2ff;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body[data-theme='dark'] .contact-icon {
+  background: #0b1120;
+  color: var(--color-primary);
+}
+
+/* Make icon inside scale nicely */
+.contact-icon svg {
+  width: 60%;   /* fills 60% of circle */
+  height: 60%;
+}
+
+@media (max-width: 576px) { /* mobile */
+  .contact-icon {
+    width: 35px;
+    height: 35px;
+  }
+  .contact-icon svg {
+    width: 65%;  /* slightly bigger inside smaller circle */
+    height: 65%;
+  }
+}
