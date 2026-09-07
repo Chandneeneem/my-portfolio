@@ -1,6 +1,5 @@
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 
-// Contact section with quick links
 const Contact = () => {
   return (
     <section id="contact" className="section fade-section">
@@ -13,7 +12,6 @@ const Contact = () => {
           <div className="col-lg-6">
           
             <div className="list-group shadow-sm">
-  {/* Gmail */}
   <a
     className="list-group-item list-group-item-action d-flex align-items-center gap-3"
     href="https://mail.google.com/mail/?view=cm&fs=1&to=chandnineem11@gmail.com"
@@ -32,7 +30,6 @@ const Contact = () => {
     </div>
   </a>
 
-  {/* GitHub */}
       <a
         className="list-group-item list-group-item-action d-flex align-items-center gap-3"
         href="https://github.com/Chandneeneem"
@@ -51,7 +48,6 @@ const Contact = () => {
         </div>
       </a>
 
-      {/* LinkedIn */}
       <a
         className="list-group-item list-group-item-action d-flex align-items-center gap-3"
         href="https://www.linkedin.com/in/chandni-neem-606591229/"

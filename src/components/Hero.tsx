@@ -1,6 +1,5 @@
 import { FaArrowRight } from 'react-icons/fa';
 
-// Hero section with quick intro and call-to-action buttons
 const Hero = () => {
   return (
     <section id="home" className="hero-section fade-section">
@@ -10,8 +9,6 @@ const Hero = () => {
             <p className="text-uppercase text-info fw-semibold mb-2">Frontend / React Developer</p>
             <h1 className="display-4 fw-bold mb-3">Hi, I&apos;m Chandnee Neem</h1>
             <p className="lead text-light-emphasis mb-4">
-              {/* I build responsive, accessible, and performant web experiences. I enjoy transforming ideas into
-              delightful interfaces with React, TypeScript, and modern tooling. */}
              I am a Frontend Developer working primarily with React, Next.js, and TypeScript, focused on building 
              responsive, accessible, and visually polished user interfaces. I enjoy transforming UI designs into
               clean, scalable components using modern frontend tools and best practices

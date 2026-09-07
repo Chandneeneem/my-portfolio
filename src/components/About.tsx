@@ -13,7 +13,7 @@ const About = () => {
             <div className="card border-0 shadow-sm">
               <div className="card-body d-flex flex-column flex-md-row align-items-start gap-3">
                 <div className="experience-pill text-center px-4 py-3 rounded-3 bg-primary text-white">
-                  <div className="fs-2 fw-bold">1+</div>
+                  <div className="fs-2 fw-bold">2</div>
                   <div className="small text-uppercase">Years in Web Development</div>
                 </div>
                 {/* <div>
